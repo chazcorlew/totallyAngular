@@ -1,0 +1,53 @@
+<div *ngIf="greeterDivToggle" class="greeterDiv">
+<!--*ngIf: this element will render IF the variable in TS is true-->
+
+<label for="myName">What's your name?</label>
+<input type="text" id="myName" [(ngModel)]="name"> <!--2 way binding is an attribute directive-->
+<button (click)="submitName()">Submit Name</button>
+</div>
+
+
+<h2 *ngIf="finalName">Welcome, {{finalName}}</h2>
+
+<div class="grid-container">
+ 
+    <div class="player-data" [hidden] = hiddenToggle> <!--[property binding] attribute to TS variable-->
+        <h2>Name: {{todo.name}}</h2>
+        <h2>Country of origin: {{todo.placeOfOrigin}}</h2>
+        <h2>Blood Type: {{todo.bloodType}}</h2>
+        <h2>Likes: {{todo.likes}}</h2>
+        <p>A solitary and dedicated warrior of the Satsui No Hado style, Ryu is on a constant mission to find himself and control his base instincts.</p>
+<!-- TWO WAY BINDING - lets us take in user input-->
+
+    </div>
+    
+
+        <div class="player-data" [hidden] = hiddenToggle>
+        <h2>Ease of Use: {{todo2.difficulty}}</h2>
+        <h2>Fight Style: {{todo2.classification}}</h2>
+        <h2>Special Moves: {{todo2.specialMoves}}</h2>
+        <h2>Critical Art: {{todo2.criticalArt}}</h2>
+    
+
+   </div>
+
+    <div class="player-data"[hidden] = hiddenToggle>
+
+        <h2>Strengths: {{todo3.characterStrengths}}</h2>
+        <h2>Weaknesses: {{todo3.characterWeaknesses}}</h2>
+        <h2>Frame Data: {{todo3.frameData}}</h2>
+       
+        <label for="updateFighter">Update Frame Data</label>
+        <input id="updateFighter" type="text" [(ngModel)]="todo3.frameData">
+        
+    </div>
+
+
+
+</div>
+
+<div class="buttonDiv">
+<!--EVENT BINDING - like an event listener, binds some action to some TS function-->
+<button class="button" (click)="showFighterInfo()">{{buttonMessage}}</button>
+
+</div>
